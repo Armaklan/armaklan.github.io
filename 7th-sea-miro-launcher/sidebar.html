@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://miro.com/app/static/styles.1.0.css" />
+    <style>
+      .rtb-sidebar-caption {
+        font-size: 14px;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.8);
+        padding: 24px 0 0 24px;
+      }
+
+      .no-selected-widget {
+        font-size: 18px;
+        text-align: center;
+        margin-top: 60px;
+        color: #999;
+      }
+
+      .widget-info {
+        padding: 20px 24px 0 24px;
+        height: 100%;
+      }
+
+      .editor {
+        width: 310px;
+        height: calc(100% - 120px);
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-sizing: border-box;
+        font-family: Arial;
+        font-size: 14px;
+        margin: 0 -10px;
+        resize: none;
+      }
+      .container {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .row {
+        box-sizing: border-box;
+        padding: 0.3em 0;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+      }
+
+      .row label {
+        flex: 1 1 100%;
+      }
+
+      .btn-action {
+        margin: auto;
+        margin-top: 1em;
+      }
+
+      .row-result {
+        width: 100%;
+        min-height: 1em;
+        min-width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        color: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <div class="rtb-sidebar-caption">Lanceur de dés 7th Sea</div>
+    
+    <p>&nbsp;</p>
+
+    <form id="formLauncher" class="container">
+      
+      <div class="row"><label for="nbDice">Pseudo</label><input type="text" name="pseudo" id="pseudo" value="Pseudo"></div>
+      <div class="row"><label for="pseudo">Nb de dé</label><input type="number" name="nbDice" id="nbDice" value="6"></div>
+      <div class="row"><label for="miseTo15">Difficulté de 15</label><input type="checkbox" id="miseTo15" name="miseTo15"> </div>
+      <div class="row"><label for="explode">10 explosif</label><input type="checkbox" id="explode" name="explode"></div>
+      <div class="row"><label for="addOne">+1 a chaque dé</label><input type="checkbox" id="addOne" name="addOne"></div>
+
+      <button type="submit" id="diceLaunch" class="btn-action">Lancer les dés</button>
+      <p>Derniers résultats : </p>
+      <div class="row row-result">
+        <p id="result">
+          &nbsp;
+        </p>
+      </div>
+      <button type="button" id="diceRelaunch" class="btn-action">Relancer un dé</button>
+    </form>
+    <script src="https://miro.com/app/static/sdk.1.1.js"></script>
+    <script src="sidebar.js"></script>
+  </body>
+</html>
